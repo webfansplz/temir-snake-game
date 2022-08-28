@@ -1,0 +1,37 @@
+{
+  "name": "temir-snake-game",
+  "version": "0.0.1",
+  "description": "Terminal-based Snake game. Powered by Temir.",
+  "author": "webfansplz",
+  "license": "MIT",
+  "homepage": "https://github.com/webfansplz/temir-snake-game#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webfansplz/temir-snake-game.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webfansplz/temir-snake-game/issues"
+  },
+  "keywords": [
+    "vue",
+    "temir",
+    "snake game"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "dev": "temir",
+    "build": "temir build src/main.ts"
+  },
+  "dependencies": {
+    "@temir/cli": "^0.0.16",
+    "@temir/core": "^0.0.16",
+    "@temir/link": "^0.0.16",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.26.1",
+    "@types/node": "^18.7.13",
+    "eslint": "^8.22.0",
+    "typescript": "^4.7.4"
+  }
+}
