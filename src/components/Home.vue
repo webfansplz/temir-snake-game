@@ -30,7 +30,7 @@ import { TBox, TText } from '@temir/core'
         border-color="yellow"
       >
         <TText color="yellow">
-          Start (s)
+          Start (S)
         </TText>
       </TBox>
       <TBox

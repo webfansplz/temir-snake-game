@@ -21,14 +21,17 @@ export function useGame() {
 
     if (playStatus.value === 'playing')
       return
+
     const retryKey = ['r', 'R']
     if (retryKey.includes(input))
       reset()
+
     if (['s', 'S', ...retryKey].includes(input))
       toggle('playing')
   }, {
     isActive: true,
   })
+
   return {
     playStatus,
     toggle,

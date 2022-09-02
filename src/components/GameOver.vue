@@ -1,7 +1,15 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
 import { TBox, TText } from '@temir/core'
 import { useScore } from '../composables'
 const { score } = useScore()
+const medal = computed(() => ({
+  [+(score.value >= 800)]: '🏆',
+  [+(score.value >= 500 && score.value < 800)]: '🥇',
+  [+(score.value >= 200 && score.value < 500)]: '🥈',
+  [+(score.value > 0 && score.value < 200)]: '🥉',
+  [+(score.value === 0)]: '😂',
+}[1]))
 </script>
 
 <template>
@@ -15,7 +23,7 @@ const { score } = useScore()
   >
     <TBox :height="3">
       <TText color="#fff">
-        You Got {{ score }} Points!
+        {{ medal }} You got {{ score }} points!
       </TText>
     </TBox>
     <TBox :height="3">
@@ -27,7 +35,7 @@ const { score } = useScore()
         border-color="yellow"
       >
         <TText color="yellow">
-          Retry (r)
+          Retry (R)
         </TText>
       </TBox>
       <TBox

@@ -9,6 +9,7 @@ import GameOver from './components/GameOver.vue'
 import Exit from './components/Exit.vue'
 
 const { playStatus } = useGame()
+
 const activeComponent = computed(() => {
   return {
     unplayed: Home,
