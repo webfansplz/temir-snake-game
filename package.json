@@ -21,6 +21,12 @@
     "vue-snake-game"
   ],
   "main": "index.js",
+  "bin": {
+    "temir-sg": "./cli.mjs"
+  },
+  "files": [
+    "dist/**/*.js"
+  ],
   "scripts": {
     "dev": "temir",
     "build": "temir build"
