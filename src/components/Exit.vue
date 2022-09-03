@@ -13,16 +13,19 @@ import TLink from '@temir/link'
     align-items="center"
   >
     <TBox :height="3">
+      <TLink
+        url="https://github.com/webfansplz/temir-snake-game"
+        :fallback="false"
+      >
+        <TText color="yellow">
+          Temir Snake Game
+        </TText>
+      </TLink>
+    </TBox>
+    <TBox :height="3">
       <TText>
         See you later !
       </TText>
-    </TBox>
-    <TBox :height="3">
-      <TLink url="https://github.com/webfansplz/temir-snake-game">
-        <TText color="yellow">
-          View On Github
-        </TText>
-      </TLink>
     </TBox>
   </TBox>
 </template>

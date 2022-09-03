@@ -14,7 +14,7 @@ import { TBox, TText } from '@temir/core'
     <TBox :height="3">
       <TText color="#fff">
         Terminal-based Snake Game build with<TText color="#58a6ff">
-          Vue.js
+          Vue + Vite
         </TText>.
         Powered by<TText color="#58a6ff">
           Temir
