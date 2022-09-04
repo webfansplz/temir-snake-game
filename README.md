@@ -31,7 +31,7 @@ For Windows users, We recommend use the [hyper](https://github.com/vercel/hyper)
 
 ## 📺 Preview
 
-![](./temir-snake-game.mov)
+![](./temir-snake-game.gif)
 
 ## 📄 License
 
