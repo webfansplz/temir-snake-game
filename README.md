@@ -27,7 +27,7 @@ Open the terminal and then enter `temir-sg`.
 
 ### Tips
 
-For Windows users, We recommend use the [hyper](https://github.com/vercel/hyper) terminal to play.
+For Windows OS, We recommend use the [hyper](https://github.com/vercel/hyper) terminal to play.
 
 ## 📺 Preview
 
