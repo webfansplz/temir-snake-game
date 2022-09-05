@@ -69,15 +69,19 @@ export function useSnake() {
     else { snakeBody.value.pop() }
   }
 
-  function onKeyBoard(_, keys) {
-    const { upArrow, downArrow, leftArrow, rightArrow } = keys
-    const d = {
-      [+leftArrow]: -1,
-      [+rightArrow]: 1,
-      [+upArrow]: -basic,
-      [+downArrow]: basic,
-    }[1] ?? direction.value
-    direction.value = (snakeBody.value[1] - snakeBody.value[0] === d) ? direction.value : d
+  function onKeyBoard(input, { upArrow, downArrow, leftArrow, rightArrow }) {
+    input = input.toLowerCase()
+
+    const newD = {
+      true: direction.value,
+      [input === 'w' || upArrow]: -basic,
+      [input === 'a' || leftArrow]: -1,
+      [input === 's' || downArrow]: basic,
+      [input === 'd' || rightArrow]: 1,
+    }['true']
+
+    // * -1 : 反向操作
+    if (direction.value !== newD * -1) direction.value = newD
   }
 
   function init() {
