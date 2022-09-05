@@ -4,12 +4,12 @@ import { TBox, TText } from '@temir/core'
 import { useScore } from '../composables'
 const { score } = useScore()
 const medal = computed(() => ({
-  [+(score.value >= 800)]: '🏆',
-  [+(score.value >= 500 && score.value < 800)]: '🥇',
-  [+(score.value >= 200 && score.value < 500)]: '🥈',
-  [+(score.value > 0 && score.value < 200)]: '🥉',
-  [+(score.value === 0)]: '😂',
-}[1]))
+  ['' + (score.value >= 800)]: '🏆',
+  ['' + (score.value >= 500 && score.value < 800)]: '🥇',
+  ['' + (score.value >= 200 && score.value < 500)]: '🥈',
+  ['' + (score.value > 0 && score.value < 200)]: '🥉',
+  ['' + (score.value === 0)]: '😂',
+}['true']))
 </script>
 
 <template>
