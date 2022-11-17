@@ -2,20 +2,35 @@
 import { TBox, TText } from '@temir/core'
 import { useSnake } from '../composables'
 
-const { basic, grids, snakeBody, init, snakeIcon, backgroundIcon, foodIcon, foodCoord } = useSnake()
+const { basic, grids, snakeBody, init, snakeIcon, foodIcon, foodCoord } = useSnake()
 
 function normalizeItem(
-  x: number, y: number,
+  x: string[], y: number,
 ) {
-  const coord = x * basic + y + 1
-  if (snakeBody.value.includes(coord))
-    return snakeIcon
+  const start = basic * y
+  const end = basic * y + basic - 1
+  const content = x.slice(0)
+  snakeBody.value.forEach((item) => {
+    if (item >= start && item <= end) {
+      if (item === start)
+        content[0] = snakeIcon
 
-  else if (coord === foodCoord.value)
-    return foodIcon
+      else if (item === end)
+        content[content.length - 1] = snakeIcon
 
-  else
-    return backgroundIcon
+      else
+        content[item % basic] = snakeIcon
+    }
+  })
+
+  if (foodCoord.value === start)
+    content[0] = foodIcon
+  else if (foodCoord.value === end)
+    content[content.length - 1] = foodIcon
+  else if (foodCoord.value > start && foodCoord.value < end)
+    content[foodCoord.value % basic] = foodIcon
+
+  return content.join('')
 }
 
 init()
@@ -23,24 +38,17 @@ init()
 
 <template>
   <TBox
-    :width="86"
-    :height="30"
     border-style="round"
     flex-direction="column"
   >
     <TBox
-      v-for="(_, x) in grids"
-      :key="x"
+      v-for="(_, y) in grids"
+      :key="y"
       flex-direction="row"
     >
-      <TBox
-        v-for="(__, y) in _"
-        :key="`${x}-${y}`"
-      >
-        <TText>
-          {{ normalizeItem(x, y) }}
-        </TText>
-      </TBox>
+      <TText>
+        {{ normalizeItem(_, y) }}
+      </TText>
     </TBox>
   </TBox>
 </template>

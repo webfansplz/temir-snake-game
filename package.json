@@ -1,6 +1,6 @@
 {
   "name": "temir-snake-game",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "description": "Terminal-based Snake Game build with Vue + Vite . Powered by Temir !",
   "author": "webfansplz",
   "license": "MIT",
